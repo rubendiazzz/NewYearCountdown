@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Rampart+One&family=Staatliches&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    color: aliceblue;
+    background-image: url("https://www.enriqueflores.es/img/graphic/fotomontaje-creativo-2/fotomontaje-creativo-2.gif");
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Rampart One', cursive;
+    font-family: 'Staatliches', cursive;
+    margin: 0;
+}
+
+h1 {
+    display: flex;
+    font-weight: normal;
+    font-size: 8rem;
+    margin-top: 17rem ;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: 3.5rem;
+}
+
+.countdown-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.big-text {
+    font-weight: bold;
+    font-size: 7rem;
+    line-height: 1;
+    margin: 1rem 3rem;
+    margin-bottom: 1rem;
+}
+
+.countdown-el {
+    text-align: center;
+    margin-block-start: -3rem;
+}
+
+.countdown-el span {
+    font-size: 1.3rem;
+}
+
+.in-flex {
+    flex-wrap: wrap;
+    flex: 1;
+    min-width: 300px;
+}
+
+.in-flex:first-child {
+    flex: 2;
+    padding: 25px;
+    margin: 20px;
+    margin-bottom: 0px;
+}
+
+.in-flex div {
+    padding: 25px;
+}
