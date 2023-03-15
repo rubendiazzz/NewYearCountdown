@@ -1,22 +1,29 @@
-// initial call
-countdown();
+// Get the countdown elements
+const daysEl = document.getElementById('days');
+const hoursEl = document.getElementById('hours');
+const minsEl = document.getElementById('mins');
+const secondsEl = document.getElementById('seconds');
 
-setInterval(countdown, 1000);
+// Update the countdown every second
+setInterval(updateCountdown, 1000);
 
-const currentYear = new Date().getFullYear();
-const newYears = new Date(`January 01 ${currentYear + 1} 00:00:00`);
+function updateCountdown() {
+  // Get the current time and new year time
+  const currentTime = new Date();
+  const newYearTime = new Date(currentTime.getFullYear() + 1, 0, 1);
 
-function countdown() {
-  const now = new Date().getTime();
-  const distance = newYears - now;
+  // Calculate the time remaining
+  const timeRemaining = newYearTime - currentTime;
 
-  let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  // Calculate the days, hours, minutes, and seconds remaining
+  const days = Math.floor(timeRemaining / 1000 / 60 / 60 / 24);
+  const hours = Math.floor(timeRemaining / 1000 / 60 / 60) % 24;
+  const mins = Math.floor(timeRemaining / 1000 / 60) % 60;
+  const seconds = Math.floor(timeRemaining / 1000) % 60;
 
-  console.log(`Countdown to New Year's Day ${currentYear + 1}: ${days}d ${hours}h ${minutes}m ${seconds}s`);
+  // Update the countdown elements
+  daysEl.innerText = days;
+  hoursEl.innerText = hours < 10 ? '0' + hours : hours;
+  minsEl.innerText = mins < 10 ? '0' + mins : mins;
+  secondsEl.innerText = seconds < 10 ? '0' + seconds : seconds;
 }
-
-countdown();
-
